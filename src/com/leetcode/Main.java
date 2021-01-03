@@ -1,20 +1,21 @@
 package com.leetcode;
 
-import com.leetcode.easy.TwoSum;
+import com.leetcode.easy.ReverseInteger2;
 
 public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		TwoSum sol = new TwoSum();
-		int nums[] = { 1, 5, 3, 4};
-		int target = 7;
-		int answer[];
-		answer = sol.twoSum(nums, target);
-		
-		for (int i = 0; i < answer.length; i++) {
-			System.out.print(answer[i] + " ");
-		}
+		ReverseInteger2 sol = new ReverseInteger2();
+
+		int x = 1534236469;
+//		9646324351
+		int answer = sol.reverse(x);
+
+		System.out.print("answer: " + answer);
+
 	}
 
 }
+
+
