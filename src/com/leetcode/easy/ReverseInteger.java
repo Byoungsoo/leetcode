@@ -2,6 +2,17 @@ package com.leetcode.easy;
 
 public class ReverseInteger {
 
+//	public static void main(String[] args) {
+//		// TODO Auto-generated method stub
+//		ReverseInteger sol = new ReverseInteger();
+//
+//		int x = 1123124;
+//		int answer = sol.reverse(x);
+//
+//		System.out.print("answer: " + answer);
+//
+//	}
+
 	public int reverse(int x) {
 
 //		step1: Positive or Negative: Add Minus or Not
