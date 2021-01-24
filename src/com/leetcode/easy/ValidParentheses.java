@@ -5,13 +5,13 @@ import java.util.Stack;
 
 public class ValidParentheses {
 
-	public static void main(String[] args) {
-		ValidParentheses v = new ValidParentheses();
-		String s = "(])";
-		boolean answer = v.isValid(s);
-		System.out.println("The answer is " + answer);
-
-	}
+//	public static void main(String[] args) {
+//		ValidParentheses v = new ValidParentheses();
+//		String s = "(])";
+//		boolean answer = v.isValid(s);
+//		System.out.println("The answer is " + answer);
+//
+//	}
 
 	public boolean isValid(String s) {
 
