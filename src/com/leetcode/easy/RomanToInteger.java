@@ -1,32 +1,54 @@
 package com.leetcode.easy;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class RomanToInteger {
-	
-	public static void main(String[] args) {
-		RomanToInteger r = new RomanToInteger();
 
-		int answer = r.romanToInt("III");
-
-		System.out.println(answer);
-
-	}
-	
-	public final static int I = 1;
-	public final static int V = 5;
-	public final static int X = 10;
-	public final static int L = 50;
-	public final static int C = 100;
-	public final static int D = 500;
-	public final static int M = 1000;
-	
-
+//	public static void main(String[] args) {
+//		RomanToInteger r = new RomanToInteger();
+//
+//		int answer = r.romanToInt("MCMXCIV");
+//
+//		System.out.println(answer);
+//
+//	}
 
 	public int romanToInt(String s) {
-		
-		
-		System.out.println();
 
-		return 1;
+		Map<Character, Integer> map = new HashMap<Character, Integer>();
+		map.put('I', 1);
+		map.put('V', 5);
+		map.put('X', 10);
+		map.put('L', 50);
+		map.put('C', 100);
+		map.put('D', 500);
+		map.put('M', 1000);
+
+		int answer = 0;
+//		while (s.length() > 0) {
+//			
+//			if (s.length() == 1) {
+//				return answer += map.get(s);
+//			}
+//			if (map.get(s.substring(0, 1)) >= map.get(s.substring(1, 2))) {
+//				answer += map.get(s.substring(0, 1));
+//				s = s.substring(1);
+//			} else {
+//				answer += map.get(s.substring(1, 2)) - map.get(s.substring(0, 1));
+//				s = s.substring(2);
+//			}
+//		}
+
+		for (int i = 0; i < s.length() - 1; i++) {
+			if (map.get(s.charAt(i)) >= map.get(s.charAt(i + 1))) {
+				answer += map.get(s.charAt(i));
+			} else {
+				answer -= map.get(s.charAt(i));
+			}
+		}
+		answer += map.get(s.charAt(s.length() - 1));
+		return answer;
 	}
 
 }
