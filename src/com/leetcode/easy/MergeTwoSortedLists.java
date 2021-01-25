@@ -2,43 +2,43 @@ package com.leetcode.easy;
 
 public class MergeTwoSortedLists {
 
-	public static void main(String[] args) {
-		MergeTwoSortedLists m = new MergeTwoSortedLists();
-		ListNode answer = new ListNode();
-
-		int arr1[] = {};
-		int arr2[] = {};
-		ListNode l1 = new ListNode();
-		ListNode l2 = new ListNode();
-
-		for (int i = arr1.length - 1; i >= 0; i--) {
-			if (i == arr1.length - 1) {
-				ListNode temp = new ListNode(arr1[i]);
-				l1 = temp;
-			} else {
-				ListNode temp = new ListNode(arr1[i]);
-				temp.next = l1;
-				l1 = temp;
-			}
-		}
-		for (int i = arr2.length - 1; i >= 0; i--) {
-			if (i == arr2.length - 1) {
-				ListNode temp = new ListNode(arr2[i]);
-				l2 = temp;
-			} else {
-				ListNode temp = new ListNode(arr2[i]);
-				temp.next = l2;
-				l2 = temp;
-			}
-		}
-
-		answer = m.mergeTwoLists(l1, l2);
-		for (int i = 0; i < 1; i++) {
-			System.out.println("List Node: " + answer.val);
-			answer = answer.next;
-		}
-
-	}
+//	public static void main(String[] args) {
+//		MergeTwoSortedLists m = new MergeTwoSortedLists();
+//		ListNode answer = new ListNode();
+//
+//		int arr1[] = {};
+//		int arr2[] = {};
+//		ListNode l1 = new ListNode();
+//		ListNode l2 = new ListNode();
+//
+//		for (int i = arr1.length - 1; i >= 0; i--) {
+//			if (i == arr1.length - 1) {
+//				ListNode temp = new ListNode(arr1[i]);
+//				l1 = temp;
+//			} else {
+//				ListNode temp = new ListNode(arr1[i]);
+//				temp.next = l1;
+//				l1 = temp;
+//			}
+//		}
+//		for (int i = arr2.length - 1; i >= 0; i--) {
+//			if (i == arr2.length - 1) {
+//				ListNode temp = new ListNode(arr2[i]);
+//				l2 = temp;
+//			} else {
+//				ListNode temp = new ListNode(arr2[i]);
+//				temp.next = l2;
+//				l2 = temp;
+//			}
+//		}
+//
+//		answer = m.mergeTwoLists(l1, l2);
+//		for (int i = 0; i < 1; i++) {
+//			System.out.println("List Node: " + answer.val);
+//			answer = answer.next;
+//		}
+//
+//	}
 
 	public static class ListNode {
 		int val;
