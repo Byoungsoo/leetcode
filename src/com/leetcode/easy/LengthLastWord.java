@@ -2,13 +2,13 @@ package com.leetcode.easy;
 
 public class LengthLastWord {
 
-	public static void main(String[] args) {
-		LengthLastWord l = new LengthLastWord();
-		String s = "  Hello   world  ";
-		int answer = l.lengthOfLastWord(s);
-
-		System.out.println("The answer is " + answer);
-	}
+//	public static void main(String[] args) {
+//		LengthLastWord l = new LengthLastWord();
+//		String s = "  Hello   world  ";
+//		int answer = l.lengthOfLastWord(s);
+//
+//		System.out.println("The answer is " + answer);
+//	}
 
 	public int lengthOfLastWord(String s) {
 		char space = ' ';
