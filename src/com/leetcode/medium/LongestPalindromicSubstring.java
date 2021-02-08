@@ -20,6 +20,7 @@ public class LongestPalindromicSubstring {
 		int max = Integer.MIN_VALUE;
 		Map<Character, Integer> map = new HashMap<Character, Integer>();
 
+		
 		for (int i = 0; i < s.length(); i++) {
 			Character cur = s.charAt(i);
 			if (map.containsKey(cur)) {
