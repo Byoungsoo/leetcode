@@ -5,14 +5,14 @@ import java.util.Map;
 
 public class LongestSubstring {
 
-	public static void main(String[] args) {
-		LongestSubstring ls = new LongestSubstring();
-		String s = "abba";
-
-		int answer = ls.lengthOfLongestSubstring(s);
-		System.out.println(answer);
-
-	}
+//	public static void main(String[] args) {
+//		LongestSubstring ls = new LongestSubstring();
+//		String s = "abba";
+//
+//		int answer = ls.lengthOfLongestSubstring(s);
+//		System.out.println(answer);
+//
+//	}
 
 	public int lengthOfLongestSubstring(String s) {
 
