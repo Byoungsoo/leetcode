@@ -2,15 +2,15 @@ package com.leetcode.easy;
 
 public class MaximumSubarray {
 
-	public static void main(String[] args) {
-
-//		int nums[] = { -2, 1, -3, 4, -1, 2, 1, -5, 4 };
-		int nums[] = { 1, 1, 2, -1 };
-		MaximumSubarray ms = new MaximumSubarray();
-		int answer = ms.maxSubArray(nums);
-
-		System.out.println(answer);
-	}
+//	public static void main(String[] args) {
+//
+////		int nums[] = { -2, 1, -3, 4, -1, 2, 1, -5, 4 };
+//		int nums[] = { 1, 1, 2, -1 };
+//		MaximumSubarray ms = new MaximumSubarray();
+//		int answer = ms.maxSubArray(nums);
+//
+//		System.out.println(answer);
+//	}
 
 	public int maxSubArray(int[] nums) {
 		if (nums.length == 1) {

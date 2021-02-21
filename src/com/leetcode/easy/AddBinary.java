@@ -2,15 +2,15 @@ package com.leetcode.easy;
 
 public class AddBinary {
 
-	public static void main(String[] args) {
-
-		AddBinary addBinary = new AddBinary();
-		String a = "11";
-		String b = "1";
-		String answer = addBinary.addBinary(a, b);
-		System.out.println(answer);
-
-	}
+//	public static void main(String[] args) {
+//
+//		AddBinary addBinary = new AddBinary();
+//		String a = "11";
+//		String b = "1";
+//		String answer = addBinary.addBinary(a, b);
+//		System.out.println(answer);
+//
+//	}
 
 	public String addBinary(String a, String b) {
 		if ("00".equals(a + b)) {
