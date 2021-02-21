@@ -1,37 +1,42 @@
 package com.leetcode.medium;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class LongestPalindromicSubstring {
 
 	public static void main(String[] args) {
 		LongestPalindromicSubstring lps = new LongestPalindromicSubstring();
-		String s = "dabbad";
+		String s = "babad";
 		String answer = lps.longestPalindrome(s);
 		System.out.println("answer: " + answer);
 
 	}
 
+	int result, maxLen;
+
 	public String longestPalindrome(String s) {
 
-		int sIndex = 0;
-		int eIndex = 0;
-		int max = Integer.MIN_VALUE;
-		Map<Character, Integer> map = new HashMap<Character, Integer>();
+		int len = s.length();
+		if (len < 2)
+			return s;
 
-		
-		for (int i = 0; i < s.length(); i++) {
-			Character cur = s.charAt(i);
-			if (map.containsKey(cur)) {
-				
-			}
-			else {
-				map.put(cur, i);
-			}
-			
+		for (int i = 0; i < len - 1; i++) {
+			extendPalindrome(s, i, i);
+			extendPalindrome(s, i, i + 1);
 		}
-		return s.substring(sIndex, eIndex);
+		return s.substring(result, result + maxLen);
+
+	}
+
+	public void extendPalindrome(String s, int left, int right) {
+		while (left >= 0 && right < s.length() - 1 && s.charAt(left) == s.charAt(right)) {
+			left--;
+			right++;
+		}
+
+		if (maxLen < right - left - 1) {
+			result = left + 1;
+			maxLen = right - left - 1;
+		}
+
 	}
 
 }
