@@ -29,6 +29,7 @@ public class AddTwoNumbers {
 				l2 = temp;
 			}
 		}
+
 		AddTwoNumbers adn = new AddTwoNumbers();
 		answer = adn.addTwoNumbers(l1, l2);
 
@@ -64,10 +65,14 @@ public class AddTwoNumbers {
 		int carry = 0;
 
 		while (l1 != null || l2 != null) {
-			
-			
-			
-			
+
+			if (l1 == null) {
+				l1 = new ListNode(0);
+			}
+			if (l2 == null) {
+				l2 = new ListNode(0);
+			}
+
 			if (l1.val + l2.val + carry >= 10) {
 				ListNode temp = new ListNode(l1.val + l2.val + carry - 10);
 				cur.next = temp;
@@ -85,6 +90,11 @@ public class AddTwoNumbers {
 			l1 = l1.next;
 			l2 = l2.next;
 		}
+		if (carry == 1) {
+			ListNode temp = new ListNode(1);
+			cur.next = temp;
+		}
+
 		return answer;
 	}
 
