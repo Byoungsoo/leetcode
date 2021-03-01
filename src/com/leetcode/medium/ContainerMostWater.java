@@ -20,17 +20,31 @@ public class ContainerMostWater {
 		int h = 0;
 		int max = 0;
 
-		for (int i = height.length - 1; i > 0; i--) {
-			for (int j = i - 1; j >= 0; j--) {
-				w = i - j;
-				h = height[i] >= height[j] ? height[j] : height[i];
-				if (max < w * h) {
-					max = w * h;
-				}
+//		for (int i = height.length - 1; i > 0; i--) {
+//			for (int j = i - 1; j >= 0; j--) {
+//				w = i - j;
+//				h = Math.min(height[i], height[j]);
+//				if (max < w * h) {
+//					max = w * h;
+//				}
+//			}
+//		}
+
+		int i = 0;
+		int j = height.length - 1;
+
+		while (i < j) {
+			w = j - i;
+			h = Math.min(height[i], height[j]);
+			max = Math.max(max, w * h);
+
+			if (height[i] < height[j]) {
+				i++;
+			} else {
+				j--;
 			}
 		}
 
 		return max;
 	}
-
 }
