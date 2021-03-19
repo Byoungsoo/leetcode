@@ -9,11 +9,12 @@ public class FourSum {
 	public static void main(String[] args) {
 		FourSum fs = new FourSum();
 //		int nums[] = { -3, -1, 0, 2, 4, 5 };
-		int nums[] = { 1, 0, -1, 0, -2, 2 };
+//		int nums[] = { 1, 0, -1, 0, -2, 2 };
 //		int nums[] = { -2,-1,-1,1,1,2,2};
 //		int nums[] = { -2, -1, 0, 0, 1, 2 };
 //		int nums[] = { -3, -1, 0, 2, 4, 5 };
-		int target = 2;
+		int nums[] = { -3,-2,-1,0,0,1,2,3 };
+		int target = 0;
 		List<List<Integer>> answer = new LinkedList<List<Integer>>();
 		answer = fs.fourSum(nums, target);
 
@@ -43,27 +44,40 @@ public class FourSum {
 			target = originTarget - nums[left] - nums[right];
 
 			while (leftSub < rightSub) {
-				List<Integer> temp = new LinkedList<Integer>();
+				if(nums[left] > originTarget) return answer;	
+				
 				if (nums[leftSub] + nums[rightSub] == target) {
+					List<Integer> temp = new LinkedList<Integer>();
 					temp.add(nums[left]);
 					temp.add(nums[leftSub]);
 					temp.add(nums[right]);
 					temp.add(nums[rightSub]);
 					answer.add(temp);
 					leftSub++;
-					if (nums[leftSub] == nums[leftSub - 1]) {
-						leftSub++;
-					} else if (nums[rightSub] == nums[rightSub - 1]) {
-						rightSub--;
-					}
+					while ((leftSub < rightSub) && (nums[leftSub] == nums[leftSub - 1]))
+						leftSub++;// avoid duplicates
+					
+					rightSub--;
+					while ((leftSub < rightSub) && (nums[rightSub] == nums[rightSub + 1]))
+						rightSub--;// avoid duplicates
+					
 				} else if (nums[leftSub] + nums[rightSub] < target) {
 					leftSub++;
 				} else if (nums[leftSub] + nums[rightSub] > target) {
 					rightSub--;
 				}
 			}
-
-
+			
+			if(nums[left] + nums[right] < target) {
+				left++;
+			}
+			else if(nums[left] + nums[right] > target) {
+				right--;
+			}
+			else if(nums[left] + nums[right] == target) {
+				left++;
+				right--;
+			}
 		}
 
 		return answer;

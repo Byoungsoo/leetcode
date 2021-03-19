@@ -2,11 +2,11 @@ package com.leetcode.easy;
 
 public class CountandSay {
 
-	public static void main(String[] args) {
-		CountandSay countandSay = new CountandSay();
-		String result = countandSay.countAndSay(6);
-		System.out.println("resut: " + result);
-	}
+//	public static void main(String[] args) {
+//		CountandSay countandSay = new CountandSay();
+//		String result = countandSay.countAndSay(3);
+//		System.out.println("resut: " + result);
+//	}
 
 	public String countAndSay(int n) {
 		String answer = "";
@@ -27,10 +27,10 @@ public class CountandSay {
 					}
 					digit = answer.charAt(i);
 				}
-
 				if (digit == answer.charAt(i)) {
 					count++;
 				}
+
 				if (i == answer.length() - 1) {
 					flag = true;
 				}
